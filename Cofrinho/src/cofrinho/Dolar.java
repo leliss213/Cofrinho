@@ -9,6 +9,6 @@ package cofrinho;
  *
  * @author Leandro
  */
-public class Cofrinho {
+public class Dolar {
     
 }

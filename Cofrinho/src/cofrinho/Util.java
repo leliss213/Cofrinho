@@ -9,6 +9,10 @@ package cofrinho;
  *
  * @author Leandro
  */
-public class Cofrinho {
+public class Util {
     
+    public static boolean validaOpcao(Integer opcao) {
+     
+        return true;
+    }
 }
