@@ -9,6 +9,21 @@ package cofrinho;
  *
  * @author Leandro
  */
-public class Dolar {
+public class Dolar extends Moeda{
+
+    public Dolar(double valor) {
+        super(valor);
+    }
+
+    
+    @Override
+    String info() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    double converter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

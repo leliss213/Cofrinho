@@ -9,6 +9,15 @@ package cofrinho;
  *
  * @author Leandro
  */
-public class Moeda {
+public abstract class Moeda {
+
+    public Moeda(double valor) {
+        this.valor = valor;
+    }
     
+    double valor;
+    
+    abstract String info();
+    
+    abstract double converter();
 }
