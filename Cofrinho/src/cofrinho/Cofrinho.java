@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cofrinho;
 
 import java.util.ArrayList;
@@ -17,17 +12,28 @@ public class Cofrinho {
     
     public void adicionar(Moeda moeda){
         listaMoedas.add(moeda);
+        System.out.println("Tamanho da lista de moedas: " + listaMoedas.size());
+
     }
     
     public void remover(Moeda moeda){
         listaMoedas.remove(moeda);
     }
     
-    public String listaMoedas(){
-        for(listaMoedas : )
+    public void listaMoedas(){
+
+        for(Moeda moeda : listaMoedas){
+            System.out.println(moeda.info());
+        }
     }
     
     public double totalConvertido(){
-        return 2;
+        double totalConvertido = 0;
+        
+        for(Moeda moeda : listaMoedas){
+            totalConvertido += moeda.converter();
+        }
+        
+        return totalConvertido;
     }
 }
