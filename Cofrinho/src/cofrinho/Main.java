@@ -5,6 +5,7 @@
  */
 package cofrinho;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,7 @@ public class Main {
         
         int opcao = 0;
         int tipoMoeda;
-        double valorMoeda;
+        double valorMoeda = 0;
         double totalConvertido;
         
         Cofrinho cofrinho = new Cofrinho();
@@ -27,7 +28,11 @@ public class Main {
                                 + "\n[1] - Adicionar Moeda\n[2] - Remover Moeda"
                                 + "\n[3] - Listar Moedas\n[4] - Total Convertido em Real\n[5] - Sair");
             Scanner scan = new Scanner(System.in);
-            opcao = scan.nextInt();        
+            try{
+                opcao = scan.nextInt();
+            } catch(InputMismatchException e){
+                System.out.println("Opção inválida, se deseja sair digite o número 6!");
+            }       
             
             if( opcao == 1 || opcao == 2 ) {
                 //Adicionar - Remover
@@ -41,7 +46,13 @@ public class Main {
                 tipoMoeda = scan.nextInt();
                 
                 System.out.println("Agora digite o valor:");
-                valorMoeda = scan.nextDouble();
+                try{
+                    valorMoeda = scan.nextDouble();
+                } catch( InputMismatchException  e){
+                    System.out.println("Valor digitao é inválido, digite apenas números!");
+                    e.printStackTrace();
+                }
+                    
                 
                 Moeda moeda = null;
                 
@@ -72,7 +83,7 @@ public class Main {
                         cofrinho.remover(moeda);
                     }  
                 } else {
-                    System.out.println("ta nulo a moeda");
+                    System.out.println("Erro ao inserir a moeda, verifique!");
                 }
 
             } else if( opcao == 3 ){

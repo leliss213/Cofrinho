@@ -17,13 +17,26 @@ public class Cofrinho {
     }
     
     public void remover(Moeda moeda){
-        listaMoedas.remove(moeda);
+        if(listaMoedas.isEmpty()){
+            System.out.println("Nenhuma moeda foi cadastrada ainda, verifique!");
+            
+        } else{
+            
+            listaMoedas.remove(moeda);
+        }
+        
     }
     
     public void listaMoedas(){
 
-        for(Moeda moeda : listaMoedas){
-            System.out.println(moeda.info());
+        if(listaMoedas.isEmpty()){        
+            System.out.println("Nenhuma moeda foi cadastrada ainda, verifique!");
+            
+        } else{
+            
+            for(Moeda moeda : listaMoedas){
+                System.out.println(moeda.info());
+            }
         }
     }
     
